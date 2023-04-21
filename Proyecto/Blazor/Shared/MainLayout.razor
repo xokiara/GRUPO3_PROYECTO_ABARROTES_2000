@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<PageTitle>Blazor</PageTitle>
+<PageTitle>Sistema de Abarrotes</PageTitle>
 
 <div class="page">
     <div class="sidebar">
@@ -13,14 +13,14 @@
                 <Authorized>
                     <span class="ml-md-auto">
                         Usuario Conectado= @context.User.Claims.First().Value
-                        <a href="/salir">Cerrar Sesión</a>
+                        <a href="/Salir">Cerrar Sesión</a>
                     </span>
                 </Authorized>
                 <NotAuthorized>
-                    <a href="login">Iniciar Sesión</a>
+                    <a href="Login" style="font-size:24px; font-weight:700" class="ml-md-auto">Iniciar Sesión</a>
                 </NotAuthorized>
+
             </AuthorizeView>
-           
         </div>
 
         <article class="content px-4">

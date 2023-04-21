@@ -50,12 +50,12 @@ namespace Blazor.Controllers
                     }
                     else
                     {
-                        return LocalRedirect("/login/Usuario inactivo");
+                        return LocalRedirect("/Login/Usuario inactivo");
                     }
                 }
                 else
                 {
-                    return LocalRedirect("/login/Datos de usuario invalidos");
+                    return LocalRedirect("/Login/Datos de usuario invalidos");
                 }
             }
             catch (Exception)
@@ -65,11 +65,11 @@ namespace Blazor.Controllers
             return LocalRedirect("/");
         }
 
-        [HttpGet("/salir")]
+        [HttpGet("/Salir")]
         public async Task<IActionResult> Cerrar()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return LocalRedirect("/login");
+            return LocalRedirect("/Login");
         }
     }
 }
