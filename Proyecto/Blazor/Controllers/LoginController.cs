@@ -21,7 +21,7 @@ namespace Blazor.Controllers
             _usuariosRepositorio = new UsuarioRepositorio(config.CadenaConexion);
         }
 
-        [HttpPost("autenticar/validar")]
+        [HttpPost("/autenticar/validar")]
         public async Task<IActionResult> Validacion(Login login)
         {
             string rol = string.Empty;
