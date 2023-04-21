@@ -1,1 +1,40 @@
-﻿<h3>Usuarios</h3>
+﻿@page "/Usuarios"
+@using Modelos;
+
+<h3>Lista de Usuarios</h3>
+
+@if(lista == null)
+{
+    <p>No existen usuarios en el sistema</p>
+}
+else
+{
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Foto</th>
+                <th>Fecha Creación</th>
+                <th>Esta Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Usuario user in lista)
+            {
+                <tr>
+                    <th>@user.CodigoUsuario</th>
+                    <th>@user.Nombre</th>
+                    <th>@user.Correo</th>
+                    <th>@user.Rol</th>
+                    <th>@user.Foto</th>
+                    <th>@user.FechaCreacion</th>
+                    <th>@user.EstaActivo</th>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+}
