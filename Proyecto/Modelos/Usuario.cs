@@ -4,7 +4,7 @@
     {
         public string CodigoUsuario { get; set; }
         public string Nombre { get; set; }
-        public string Contraseña { get; set; }
+        public string Contrasena { get; set; }
         public string Correo { get; set; }
         public string Rol { get; set; }
         public byte[] Foto { get; set; }
@@ -15,11 +15,11 @@
         {
         }
 
-        public Usuario(string codigoUsuario, string nombre, string contraseña, string correo, string rol, byte[] foto, DateTime fechaCreacion, bool estaActivo)
+        public Usuario(string codigoUsuario, string nombre, string contrasena, string correo, string rol, byte[] foto, DateTime fechaCreacion, bool estaActivo)
         {
             CodigoUsuario = codigoUsuario;
             Nombre = nombre;
-            Contraseña = contraseña;
+            Contrasena = contrasena;
             Correo = correo;
             Rol = rol;
             Foto = foto;
