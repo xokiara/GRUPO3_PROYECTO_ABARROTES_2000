@@ -2,25 +2,35 @@
 @page "/login/{MensajeError}"
 @inject NavigationManager navManager
 
-<h3>Login</h3>
-
 @if (MensajeError != null)
 {
     <div class="text-danger">@MensajeError</div>
 }
 
 <form method="post" action="/autenticar/validar">
-    <div class="form-group">
-        <label>Usuario:</label>
-        <input type="text" name="CodigoUsuario" class="form-control col-sm-6 col-md-4"/>
+    <div class="card border-0 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+            <h3 class="card-title text-center mb-4">Inicio de sesión</h3>
+            <form>
+                <div class="form-group">
+                    <label for="CodigoUsuario" class="h5">Usuario:</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="user-icon"><i class="bi bi-person-fill"></i></span>
+                        <input type="text" name="CodigoUsuario" class="form-control form-control-lg" id="CodigoUsuario" placeholder="Ingresa tu usuario" aria-label="Ingresa tu usuario" aria-describedby="user-icon">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Contrasena" class="h5">Contraseña:</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="password-icon"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" name="Contrasena" class="form-control form-control-lg" id="Contrasena" placeholder="Ingresa tu contraseña" aria-label="Ingresa tu contraseña" aria-describedby="password-icon">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg" style="font-size: 18px; font-weight: bold;">Entrar</button>
+            </form>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label>Contraseña:</label>
-        <input type="password" name="Contrasena" class="form-control col-sm-6 col-md-4" />
-    </div>
-
-    <button class="btn btn-primary">Entrar</button>
 </form>
 
 
