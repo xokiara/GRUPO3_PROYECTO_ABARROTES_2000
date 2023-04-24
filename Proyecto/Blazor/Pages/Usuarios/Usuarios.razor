@@ -1,7 +1,10 @@
 ﻿@page "/Usuarios"
 @using Modelos;
 
-<h3>Lista de Usuarios</h3>
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AutenticationState">
+
+        <h3>Lista de Usuarios</h3>
 
 @if(lista == null)
 {
@@ -9,7 +12,7 @@
 }
 else
 {
-    <table class="table table-dark table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>Código</th>
@@ -31,10 +34,31 @@ else
                     <th>@user.Rol</th>
                     <th>@user.Foto</th>
                     <th>@user.FechaCreacion</th>
-                    <th>@user.EstaActivo</th>
-                </tr>
-                
+                    @if(user.EstaActivo)
+                    {
+                        <th>
+                            <span class="oi oi-circle-check" style="color:green;"></span>
+                        </th>
+                    }
+                    else
+                    {
+                        <th>
+                            <span class="oi oi-circle-x" style="color:red;"></span>
+                        </th>
+                    }
+                    <th>
+                        <a class="btn btn-success" href="@($"/Usuarios/Editar/{user.CodigoUsuario}")">Editar</a>
+                    </th>
+
+                </tr>  
             }
         </tbody>
     </table>
 }
+
+    </Authorized>
+    <NotAuthorized>
+        <h3>No tiene permiso para entrar a esta ruta</h3>
+    </NotAuthorized>
+</AuthorizeView>
+
