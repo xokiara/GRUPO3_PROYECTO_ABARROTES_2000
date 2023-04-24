@@ -6,6 +6,12 @@
 
         <h3>Lista de Usuarios</h3>
 
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <a href="/Usuarios/Nuevo" class="btn btn-primary m-2">Nuevo</a>
+            </div>
+        </div>
+
 @if(lista == null)
 {
     <p>No existen usuarios en el sistema</p>
@@ -32,8 +38,17 @@ else
                     <th>@user.Nombre</th>
                     <th>@user.Correo</th>
                     <th>@user.Rol</th>
-                    <th>@user.Foto</th>
-                    <th>@user.FechaCreacion</th>
+                    @if(user.Foto != null)
+                    {
+                        <th>
+                            <img width="40" height="40" src="data: image;base64,@System.Convert.ToBase64String(user.Foto)" />
+                        </th>
+                    }
+                    else
+                    {
+                        <th></th>
+                    }
+                            <th>@user.FechaCreacion</th>
                     @if(user.EstaActivo)
                     {
                         <th>

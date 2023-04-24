@@ -37,7 +37,7 @@ namespace Datos.Repositorios
             return resultado;
         }
 
-        public async Task<bool> EliminarAsync(string codigo)
+        public async Task<bool> EliminarAsync(string codigoUsuario)
         {
             bool resultado = false;
             try
@@ -45,7 +45,7 @@ namespace Datos.Repositorios
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "DELETE FROM usuario WHERE CodigoUsuario = @CodigoUsuario;";
-                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, new { codigo }));
+                resultado = Convert.ToBoolean(await _conexion.ExecuteAsync(sql, new { codigoUsuario }));
             }
             catch (Exception)
             {
@@ -69,7 +69,7 @@ namespace Datos.Repositorios
             return lista;
         }
 
-        public async Task<Usuario> GetPorCodigoAsync(string codigo)
+        public async Task<Usuario> GetPorCodigoAsync(string codigoUsuario)
         {
             Usuario user = new Usuario();
             try
@@ -77,7 +77,7 @@ namespace Datos.Repositorios
                 using MySqlConnection _conexion = Conexion();
                 await _conexion.OpenAsync();
                 string sql = "SELECT * FROM usuario WHERE CodigoUsuario = @CodigoUsuario;";
-                user = await _conexion.QueryFirstAsync<Usuario>(sql, new { codigo });
+                user = await _conexion.QueryFirstAsync<Usuario>(sql, new { codigoUsuario });
             }
             catch (Exception)
             {
