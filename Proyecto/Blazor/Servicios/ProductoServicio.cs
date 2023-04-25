@@ -1,4 +1,6 @@
 ﻿using Blazor.Interfaces;
+using Datos.Interfaces;
+using Datos.Repositorios;
 using Modelos;
 
 namespace Blazor.Servicios
@@ -6,29 +8,44 @@ namespace Blazor.Servicios
     //Heredamos de IProductoServicio
     public class ProductoServicio : IProductoServicio
     {
-        public Task<bool> ActualizarAsync(Producto producto)
+        private readonly Config _config;
+        private IProductoRepositorio productoRepositorio;
+
+        //Constructor
+        public ProductoServicio(Config config)
         {
-            throw new NotImplementedException();
+            _config = config;
+            productoRepositorio = new ProductoRepositorio(config.CadenaConexion);
         }
 
-        public Task<bool> EliminarAsync(string codigo)
+        public async Task<bool> ActualizarAsync(Producto producto)
         {
-            throw new NotImplementedException();
+            //Retornamos la tarea del productoRepositorio y llamamos el metodo actualizar y le pasamos el parametro
+            return await productoRepositorio.ActualizarAsync(producto);
         }
 
-        public Task<IEnumerable<Producto>> GetListaAsync()
+        public async Task<bool> EliminarAsync(string codigo)
         {
-            throw new NotImplementedException();
+            //retornamos el metodo de eliminar
+            return await productoRepositorio.EliminarAsync(codigo);
         }
 
-        public Task<Producto> GetPorCodigoAsync(string codigo)
+        public async Task<IEnumerable<Producto>> GetListaAsync()
         {
-            throw new NotImplementedException();
+            //retornamos la lista de productos
+            return await productoRepositorio.GetListaAsync();
         }
 
-        public Task<bool> NuevoAsync(Producto producto)
+        public async Task<Producto> GetPorCodigoAsync(string codigo)
         {
-            throw new NotImplementedException();
+            //retornamos el metodo
+            return await productoRepositorio.GetPorCodigoAsync(codigo);
+        }
+
+        public async Task<bool> NuevoAsync(Producto producto)
+        {
+            //retornamos el metodo de nuevo producto
+            return await productoRepositorio.NuevoAsync(producto);
         }
     }
 }
