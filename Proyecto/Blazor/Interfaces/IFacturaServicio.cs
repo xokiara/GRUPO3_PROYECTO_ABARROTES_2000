@@ -1,7 +1,8 @@
-﻿namespace Blazor.Interfaces
+﻿using Modelos;
+
+namespace Blazor.Interfaces
 {
     public class IFacturaServicio
     {
-
     }
 }
