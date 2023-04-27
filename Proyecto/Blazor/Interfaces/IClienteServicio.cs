@@ -1,15 +1,9 @@
 ﻿using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Datos.Interfaces
+namespace Blazor.Interfaces
 {
-    public interface IClienteRepositorio
+    public interface IClienteServicio
     {
-        //declarar metodos
         Task<Cliente> GetPorCodigoAsync(string identidad);
         Task<bool> NuevoAsync(Cliente cliente);
         Task<bool> ActualizarAsync(Cliente cliente);
