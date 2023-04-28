@@ -9,7 +9,7 @@ namespace Modelos
 {
     public class Cliente
     {
-        [Required(ErrorMessage = "La Identidad es requerida")]
+        [Required(ErrorMessage = "La Identidad es Requerida")]
         public string Identidad { get; set; }
 
         [Required(ErrorMessage = "El Nombre es Requerido")]
