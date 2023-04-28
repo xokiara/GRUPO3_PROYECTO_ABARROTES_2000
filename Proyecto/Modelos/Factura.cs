@@ -10,5 +10,21 @@
         public decimal Descuento { get; set; }
         public decimal SubTotal { get; set; }
         public decimal Total { get; set; }
+
+        public Factura()
+        {
+        }
+
+        public Factura(int id, DateTime fecha, string identidadCliente, string codigoUsuario, decimal iSV, decimal descuento, decimal subTotal, decimal total)
+        {
+            Id = id;
+            Fecha = fecha;
+            IdentidadCliente = identidadCliente;
+            CodigoUsuario = codigoUsuario;
+            ISV = iSV;
+            Descuento = descuento;
+            SubTotal = subTotal;
+            Total = total;
+        }
     }
 }
