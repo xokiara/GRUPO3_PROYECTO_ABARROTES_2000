@@ -1,7 +1,6 @@
 ﻿namespace Blazor.Interfaces
 {
-    public class IDetalleFacturaServicio
+    public interface IDetalleFacturaServicio
     {
-
     }
 }
