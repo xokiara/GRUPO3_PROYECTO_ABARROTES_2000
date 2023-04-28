@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Interfaces
 {
-    internal interface IDetalleFacturaRepositorio
+    public interface IDetalleFacturaRepositorio
     {
     }
 }
