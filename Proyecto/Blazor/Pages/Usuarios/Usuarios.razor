@@ -4,13 +4,13 @@
 <AuthorizeView Roles="Administrador">
     <Authorized Context="AutenticationState">
 
-        <h3>Lista de Usuarios</h3>
+        <h3 style="color:cadetblue"><b>Lista de Usuarios</b></h3><br>
 
         <div class="form-group row">
             <div class="col-sm-2">
-                <a href="/Usuarios/Nuevo" class="btn btn-primary m-2">Nuevo</a>
+                <a href="/Usuarios/Nuevo" class="btn btn-outline-primary" style="color:midnightblue" m-"><b>Nuevo</b></a>
             </div>
-        </div>
+        </div><br>
 
 @if(lista == null)
 {
@@ -18,8 +18,8 @@
 }
 else
 {
-    <table class="table">
-        <thead>
+    <table class="table table-striped" border="4" align="center">
+        <thead class="table-light" style="color:teal">
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
