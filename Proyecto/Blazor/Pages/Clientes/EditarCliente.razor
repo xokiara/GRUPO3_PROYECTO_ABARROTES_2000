@@ -64,9 +64,9 @@
                     Fecha Nacimiento
                 </label>
                 <div class="col-sm-10">
-                    <label form="FechaNacimiento" class="col-form-label">
-                        @client.FechaNacimiento.ToShortDateString()
-                    </label>
+                    <InputDate id="Fecha Nacimiento" class="form-control" @bind-Value="client.FechaNacimiento">
+
+                    </InputDate>
                 </div>
             </div>
 
