@@ -13,9 +13,8 @@
                     Identidad
                 </label>
                 <div class="col-sm-10">
-                    <label form="Identidad" class="col-sm-2 col-form-label">
-                        @client.Identidad
-                    </label>
+                    <InputText id="Identidad" class="form-control" @bind-Value="client.Identidad" />
+                    <ValidationMessage For="@(() => client.Identidad)" />
                 </div>
             </div>
 
