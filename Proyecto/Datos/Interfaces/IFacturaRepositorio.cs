@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Modelos;
 
 namespace Datos.Interfaces
 {
-    internal interface IFacturaRepositorio
+    public interface IFacturaRepositorio
     {
+        Task<int> Nueva(Factura factura);
     }
 }
