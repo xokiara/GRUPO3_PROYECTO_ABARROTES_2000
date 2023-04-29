@@ -2,7 +2,7 @@
 
 namespace Datos.Interfaces
 {
-    internal interface IDetalleFacturaRepositorio
+    public interface IDetalleFacturaRepositorio
     {
         Task<bool> Nuevo(DetalleFactura detalleFactura);
     }
