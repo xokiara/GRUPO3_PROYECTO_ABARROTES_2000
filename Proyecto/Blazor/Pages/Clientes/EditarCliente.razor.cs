@@ -12,7 +12,7 @@ namespace Blazor.Pages.Clientes
         [Inject] private NavigationManager navigationManager { get; set; }
         [Inject] private SweetAlertService Swal { get; set; }
 
-        Cliente client = new Cliente();
+        private Cliente client = new Cliente();
 
         [Parameter] public string Identidad { get; set; }
 
@@ -34,7 +34,7 @@ namespace Blazor.Pages.Clientes
 
             if (edito)
             {
-                await Swal.FireAsync("Feliciddades", "Cliente Actualizado con Exito", SweetAlertIcon.Success);
+                await Swal.FireAsync("Felicidades", "Cliente Actualizado con Éxito", SweetAlertIcon.Success);
             }
             else
             {

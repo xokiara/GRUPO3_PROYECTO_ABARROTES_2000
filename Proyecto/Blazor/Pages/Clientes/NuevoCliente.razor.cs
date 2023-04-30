@@ -26,7 +26,7 @@ namespace Blazor.Pages.Clientes
 
             if (inserto)
             {
-                await Swal.FireAsync("Feliciddades", "Cliente Guardado", SweetAlertIcon.Success);
+                await Swal.FireAsync("Felicidades", "Cliente Guardado", SweetAlertIcon.Success);
             }
             else
             {
