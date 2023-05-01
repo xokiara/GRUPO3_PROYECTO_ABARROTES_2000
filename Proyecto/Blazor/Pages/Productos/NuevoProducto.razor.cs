@@ -55,12 +55,12 @@ namespace Blazor.Pages.Productos
 
             if (inserto)
             {
-                await Swal.FireAsync("Feliciddades", "Producto Guardado", SweetAlertIcon.Success);
+                await Swal.FireAsync("Felicidades", "Producto Guardado", SweetAlertIcon.Success);
                 navigationManager.NavigateTo("/Productos"); //Nos devuelve a la ruta de productos
             }
             else
             {
-                await Swal.FireAsync("Eroor", "No se pudo Guardar el producto", SweetAlertIcon.Error);
+                await Swal.FireAsync("Error", "No se pudo Guardar el producto", SweetAlertIcon.Error);
             }
         }
 
