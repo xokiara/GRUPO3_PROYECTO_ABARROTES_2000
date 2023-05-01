@@ -44,7 +44,7 @@ namespace Blazor.Pages.Usuarios
 
             if (edito)
             {
-                await Swal.FireAsync("Feliciddades", "Usuario Actualizado con Exito", SweetAlertIcon.Success);
+                await Swal.FireAsync("Felicidades", "Usuario Actualizado con Exito", SweetAlertIcon.Success);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Blazor.Pages.Usuarios
         {
             SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
             {
-                Title = "¿Esta Seguro que desea eliminar el usuario? ",
+                Title = "¿Está Seguro que desea eliminar el usuario? ",
                 Icon = SweetAlertIcon.Question,
                 ShowCancelButton = true,
                 ConfirmButtonText = "Aceptar",
