@@ -40,6 +40,7 @@ namespace Blazor.Pages.Usuarios
             if (inserto)
             {
                 await Swal.FireAsync("Felicidades", "Usuario Guardado", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Usuarios");
             }
             else
             {

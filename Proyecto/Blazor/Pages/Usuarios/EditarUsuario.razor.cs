@@ -45,6 +45,7 @@ namespace Blazor.Pages.Usuarios
             if (edito)
             {
                 await Swal.FireAsync("Felicidades", "Usuario Actualizado con Exito", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Usuarios");
             }
             else
             {

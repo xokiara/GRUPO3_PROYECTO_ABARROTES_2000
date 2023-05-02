@@ -35,6 +35,7 @@ namespace Blazor.Pages.Clientes
             if (edito)
             {
                 await Swal.FireAsync("Felicidades", "Cliente Actualizado con Éxito", SweetAlertIcon.Success);
+                navigationManager.NavigateTo("/Clientes");
             }
             else
             {
